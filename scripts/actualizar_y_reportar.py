@@ -423,6 +423,7 @@ def enviar_correo(html_body: str, excel_path: Path, destinatarios: list[str], fe
     msg = MIMEMultipart("mixed")
     msg["Subject"] = f"Seguimiento Legislativo — {fecha}"
     msg["To"] = ", ".join(destinatarios)
+    msg["From"] = "Francisco Arellano <farellano@observatorio.cl>"
 
     # Cuerpo HTML
     msg.attach(MIMEText(html_body, "html", "utf-8"))
