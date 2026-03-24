@@ -337,7 +337,7 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
     {tabla_alertas}
     <hr style="border:none;border-top:1px solid #e2e8f0;margin-top:32px">
     <p style="font-size:12px;color:#94a3b8;margin:12px 0 0">
-      Generado automáticamente por el sistema de seguimiento legislativo de Nodo XXI.
+      Generado automáticamente por el sistema de seguimiento legislativo de Proyecto REDAR.
       Fuente: tramitacion.senado.cl / camara.cl
     </p>
   </div>
