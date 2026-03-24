@@ -244,12 +244,26 @@ def detectar_cambios(estado_anterior: dict, estado_nuevo: dict) -> list[dict]:
 # CORREO HTML
 # ══════════════════════════════════════════════════════════════════════════════
 
+SEMANAS_RECIENTE = 4  # destacar proyectos con movimiento en las últimas N semanas
+
+
 def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
-    solo_cambios = [c for c in cambios if c["hubo_cambio"]]
-    sin_cambio   = [c for c in cambios if not c["hubo_cambio"]]
-    con_alerta   = [c for c in sin_cambio
-                    if c["semanas_sin_cambio"] is not None
-                    and c["semanas_sin_cambio"] >= SEMANAS_ALERTA]
+    solo_cambios   = [c for c in cambios if c["hubo_cambio"]]
+    sin_cambio     = [c for c in cambios if not c["hubo_cambio"]]
+
+    # Proyectos con movimiento reciente (últimas 2 semanas), excluyendo los que
+    # ya aparecen en "cambios esta semana"
+    con_movimiento_reciente = [
+        c for c in sin_cambio
+        if c["semanas_sin_cambio"] is not None
+        and c["semanas_sin_cambio"] <= SEMANAS_RECIENTE
+    ]
+
+    con_alerta = [
+        c for c in sin_cambio
+        if c["semanas_sin_cambio"] is not None
+        and c["semanas_sin_cambio"] >= SEMANAS_ALERTA
+    ]
 
     def fila_cambio(c):
         estado_ant = c["estado_anterior"] if c["estado_anterior"] != "—" else "<em>nuevo</em>"
@@ -263,6 +277,18 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
           <td style="padding:8px;border-bottom:1px solid #e2e8f0;font-size:13px;color:#16a34a">{c['estado_nuevo']}</td>
         </tr>"""
 
+    def fila_reciente(c):
+        return f"""
+        <tr>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;font-weight:600;white-space:nowrap">🟢 {c['boletin']}</td>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;font-size:13px">{c['nombre']}</td>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;white-space:nowrap">{c['fecha_ult']}</td>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;font-size:13px">{c['ult_mov']}</td>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;color:#15803d">
+            Hace {c['semanas_sin_cambio']} semana{'s' if c['semanas_sin_cambio'] != 1 else ''}
+          </td>
+        </tr>"""
+
     def fila_alerta(c):
         return f"""
         <tr>
@@ -272,6 +298,7 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
           <td style="padding:8px;border-bottom:1px solid #fef3c7;color:#92400e">{c['semanas_sin_cambio']} semanas sin movimiento</td>
         </tr>"""
 
+    # ── Sección cambios esta semana ──
     tabla_cambios = ""
     if solo_cambios:
         filas = "".join(fila_cambio(c) for c in solo_cambios)
@@ -297,6 +324,28 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
           ✅ No hubo cambios de tramitación esta semana.
         </p>"""
 
+    # ── Sección movimiento reciente (últimas 2 semanas) ──
+    tabla_reciente = ""
+    if con_movimiento_reciente:
+        filas_r = "".join(fila_reciente(c) for c in con_movimiento_reciente)
+        tabla_reciente = f"""
+        <h2 style="color:#15803d;font-size:16px;margin-top:28px">
+          🟢 Con movimiento reciente — último mes ({len(con_movimiento_reciente)})
+        </h2>
+        <table style="width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;background:#f0fdf4">
+          <thead>
+            <tr style="background:#16a34a;color:white">
+              <th style="padding:10px;text-align:left">Boletín</th>
+              <th style="padding:10px;text-align:left">Nombre</th>
+              <th style="padding:10px;text-align:left">Fecha</th>
+              <th style="padding:10px;text-align:left">Último movimiento</th>
+              <th style="padding:10px;text-align:left">Antigüedad</th>
+            </tr>
+          </thead>
+          <tbody>{filas_r}</tbody>
+        </table>"""
+
+    # ── Sección alertas de inactividad ──
     tabla_alertas = ""
     if con_alerta:
         filas_a = "".join(fila_alerta(c) for c in con_alerta)
@@ -334,10 +383,11 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
       Adjunto encontrarás el Excel actualizado.
     </p>
     {tabla_cambios}
+    {tabla_reciente}
     {tabla_alertas}
     <hr style="border:none;border-top:1px solid #e2e8f0;margin-top:32px">
     <p style="font-size:12px;color:#94a3b8;margin:12px 0 0">
-      Generado automáticamente por el sistema de seguimiento legislativo de Proyecto REDAR.
+      Generado automáticamente por el sistema de seguimiento legislativo del Proyecto REDAR.
       Fuente: tramitacion.senado.cl / camara.cl
     </p>
   </div>
