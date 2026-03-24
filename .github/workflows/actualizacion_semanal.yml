@@ -3,7 +3,7 @@ name: Seguimiento Legislativo Semanal
 on:
   schedule:
     # Cada lunes a las 11:00 AM hora Chile (UTC-3 → 14:00 UTC)
-    - cron: '0 14 * * 1'
+    - cron: '0 11 * * 1'
   workflow_dispatch:
     # Permite correr manualmente desde GitHub Actions
 
