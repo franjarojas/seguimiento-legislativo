@@ -55,8 +55,14 @@ COL_BOLETIN   = 1
 COL_NOMBRE    = 2
 COL_FECHA_ULT = 3
 COL_ULT_MOV   = 4
-COL_FECHA_PRS = 5
-COL_ESTADO    = 6
+COL_URGENCIA  = 5
+COL_UBICACION = 6
+COL_COMISION  = 7
+COL_FECHA_PRS = 8
+COL_ESTADO    = 9
+COL_TIPO      = 10
+COL_CAMARA    = 11
+COL_AUTORES   = 12
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -123,12 +129,119 @@ def obtener_ultimo_tramite(proyid: str, boletin: str) -> dict:
     return {"fecha": fecha, "descripcion": descripcion, "estado": estado}
 
 
-def scraping_boletin(boletin: str) -> dict:
+def obtener_datos_proy(boletin: str) -> dict:
+    """Obtiene metadatos del proyecto: título, fecha ingreso, cámara, iniciativa, urgencia."""
+    params = {"mo": "tramitacion", "ac": "datos_proy", "nboletin": boletin, "etc": ts()}
+    resultado = {}
+    try:
+        r = requests.get(BASE_SENADO, params=params, headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(r.text, "html.parser")
+        tabla = soup.find("table", class_="table-datos")
+        if tabla:
+            rows = tabla.find_all("tr")
+            for i, tr in enumerate(rows):
+                tds = tr.find_all("td")
+                vals = [td.get_text(strip=True) for td in tds]
+                if not vals:
+                    continue
+                label = vals[0].rstrip(":").strip()
+                valor = vals[1] if len(vals) > 1 else ""
+                if label == "Título":
+                    resultado["nombre"] = valor
+                elif label == "Fecha de Ingreso":
+                    resultado["fecha_prs"] = valor
+                elif label == "Cámara de Origen":
+                    resultado["camara"] = valor
+                elif label == "Iniciativa":
+                    resultado["tipo"] = valor
+                elif label == "Urgencia Actual":
+                    resultado["urgencia"] = valor
+                elif label == "Etapa:" or label == "Etapa":
+                    # La subetapa (comisión) está en la siguiente fila
+                    if i + 1 < len(rows):
+                        next_tds = rows[i + 1].find_all("td")
+                        if len(next_tds) > 1:
+                            resultado["subetapa"] = next_tds[1].get_text(strip=True)
+                        elif next_tds:
+                            resultado["subetapa"] = next_tds[0].get_text(strip=True)
+    except Exception:
+        pass
+    return resultado
+
+
+def obtener_autores(proyid: str) -> str:
+    """Devuelve los autores del proyecto como string separado por '; '."""
+    params = {"mo": "tramitacion", "ac": "autores", "proyid": proyid, "etc": ts()}
+    try:
+        r = requests.get(BASE_SENADO, params=params, headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(r.text, "html.parser")
+        tabla = soup.find("table", id="grid_aut") or soup.find("table")
+        if not tabla:
+            return "—"
+        autores = []
+        for fila in tabla.find_all("tr"):
+            celdas = fila.find_all("td")
+            if len(celdas) >= 2:
+                nombre = celdas[1].get_text(strip=True)
+                if nombre and nombre != "Autor":
+                    autores.append(nombre)
+        return "; ".join(autores) if autores else "—"
+    except Exception:
+        return "—"
+
+
+def derivar_comision(subetapa: str) -> str:
+    """Extrae la comisión actual o devuelve 'En Sala' si el proyecto está en sala."""
+    s = subetapa.strip()
+    m = re.search(r'informe de comisi[oó]n de (.+)', s, re.IGNORECASE)
+    if m:
+        return m.group(1).strip()
+    if re.search(r'discusi[oó]n', s, re.IGNORECASE):
+        return "En Sala"
+    return s if s else "—"
+
+
+def derivar_ubicacion(estado: str) -> str:
+    """Extrae la ubicación actual (Senado / Cámara) desde el estado de tramitación."""
+    e = estado.lower()
+    if "senado" in e:
+        return "Senado"
+    if "diputados" in e or "diputado" in e:
+        return "Cámara"
+    if "mixta" in e:
+        return "Comisión Mixta"
+    return "—"
+
+
+def obtener_urgencia(boletin: str) -> str:
+    datos = obtener_datos_proy(boletin)
+    return datos.get("urgencia", "—")
+
+
+def scraping_boletin(boletin: str, completar_estaticos: bool = False) -> dict:
     proyid = obtener_proyid(boletin)
     if not proyid:
         return {"error": "No se pudo obtener proyid"}
     time.sleep(0.3)
-    return obtener_ultimo_tramite(proyid, boletin)
+    resultado = obtener_ultimo_tramite(proyid, boletin)
+    if "error" in resultado:
+        return resultado
+
+    # Urgencia y metadatos estáticos desde datos_proy (una sola llamada)
+    datos = obtener_datos_proy(boletin)
+    resultado["urgencia"]  = datos.get("urgencia", "—")
+    resultado["ubicacion"] = derivar_ubicacion(resultado.get("estado", ""))
+    resultado["comision"]  = derivar_comision(datos.get("subetapa", ""))
+
+    if completar_estaticos:
+        time.sleep(0.3)
+        resultado["nombre"]    = datos.get("nombre", "")
+        resultado["fecha_prs"] = datos.get("fecha_prs", "")
+        resultado["camara"]    = datos.get("camara", "")
+        resultado["tipo"]      = datos.get("tipo", "")
+        resultado["autores"]   = obtener_autores(proyid)
+
+    return resultado
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -148,6 +261,9 @@ def leer_estado_excel(ruta: Path) -> dict:
             "nombre":    str(row[COL_NOMBRE - 1]    or ""),
             "fecha_ult": str(row[COL_FECHA_ULT - 1] or ""),
             "ult_mov":   str(row[COL_ULT_MOV - 1]   or ""),
+            "urgencia":  str(row[COL_URGENCIA - 1]  or ""),
+            "ubicacion": str(row[COL_UBICACION - 1] or ""),
+            "comision":  str(row[COL_COMISION - 1]  or ""),
             "estado":    str(row[COL_ESTADO - 1]     or ""),
         }
     return estado
@@ -167,8 +283,11 @@ def actualizar_excel(ruta: Path) -> dict:
         if not val_raw or val_raw == "—":
             continue
         boletin = normalizar_boletin(val_raw)
-        print(f"  {boletin}...", end=" ", flush=True)
-        r = scraping_boletin(boletin)
+        # Completar datos estáticos si el nombre está vacío o es genérico
+        nombre_actual = str(row[COL_NOMBRE - 1].value or "").strip()
+        completar = not nombre_actual or nombre_actual in ("—", "Sin información disponible")
+        print(f"  {boletin}{'[completar]' if completar else ''}...", end=" ", flush=True)
+        r = scraping_boletin(boletin, completar_estaticos=completar)
         resultados[val_raw] = r
 
         if "error" in r:
@@ -181,10 +300,40 @@ def actualizar_excel(ruta: Path) -> dict:
         row[COL_ULT_MOV - 1].value       = r["descripcion"]
         row[COL_ULT_MOV - 1].font        = font_d
         row[COL_ULT_MOV - 1].alignment   = a_wrap
+        row[COL_URGENCIA - 1].value      = r.get("urgencia", "—")
+        row[COL_URGENCIA - 1].font       = font_d
+        row[COL_URGENCIA - 1].alignment  = a_ctr
+        row[COL_UBICACION - 1].value     = r.get("ubicacion", "—")
+        row[COL_UBICACION - 1].font      = font_d
+        row[COL_UBICACION - 1].alignment = a_ctr
+        row[COL_COMISION - 1].value      = r.get("comision", "—")
+        row[COL_COMISION - 1].font       = font_d
+        row[COL_COMISION - 1].alignment  = a_wrap
         row[COL_ESTADO - 1].value         = r["estado"]
         row[COL_ESTADO - 1].font          = font_d
         row[COL_ESTADO - 1].alignment     = a_wrap
-        print(f"OK → {r['fecha']}")
+        # Rellenar datos estáticos si fueron obtenidos
+        if r.get("nombre"):
+            row[COL_NOMBRE - 1].value     = r["nombre"]
+            row[COL_NOMBRE - 1].font      = font_d
+            row[COL_NOMBRE - 1].alignment = a_wrap
+        if r.get("fecha_prs"):
+            row[COL_FECHA_PRS - 1].value     = r["fecha_prs"]
+            row[COL_FECHA_PRS - 1].font      = font_d
+            row[COL_FECHA_PRS - 1].alignment = a_wrap
+        if r.get("tipo"):
+            row[COL_TIPO - 1].value     = r["tipo"]
+            row[COL_TIPO - 1].font      = font_d
+            row[COL_TIPO - 1].alignment = a_ctr
+        if r.get("camara"):
+            row[COL_CAMARA - 1].value     = r["camara"]
+            row[COL_CAMARA - 1].font      = font_d
+            row[COL_CAMARA - 1].alignment = a_ctr
+        if r.get("autores"):
+            row[COL_AUTORES - 1].value     = r["autores"]
+            row[COL_AUTORES - 1].font      = font_d
+            row[COL_AUTORES - 1].alignment = a_wrap
+        print(f"OK → {r['fecha']} | urgencia: {r.get('urgencia', '—')}")
 
     wb.save(ruta)
     return resultados
