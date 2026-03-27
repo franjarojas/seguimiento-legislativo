@@ -34,7 +34,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 from openpyxl import load_workbook
-from openpyxl.styles import Font, Alignment
+from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 
 # ── Rutas ──────────────────────────────────────────────────────────────────
 ROOT            = Path(__file__).parent.parent
@@ -248,6 +248,32 @@ def scraping_boletin(boletin: str, completar_estaticos: bool = False) -> dict:
 # EXCEL
 # ══════════════════════════════════════════════════════════════════════════════
 
+# Columnas centradas vs. con wrap izquierdo
+COLS_CENTRADAS = {COL_BOLETIN, COL_FECHA_ULT, COL_URGENCIA, COL_UBICACION,
+                  COL_FECHA_PRS, COL_TIPO, COL_CAMARA}
+FILL_ALTERNO   = PatternFill("solid", fgColor="EBF3FB")
+BORDE_CELDA    = Border(
+    top=Side(style="thin", color="CCCCCC"),
+    bottom=Side(style="thin", color="CCCCCC"),
+    left=Side(style="thin", color="CCCCCC"),
+    right=Side(style="thin", color="CCCCCC"),
+)
+
+
+def estandarizar_formato(ws) -> None:
+    """Aplica diseño uniforme a todas las celdas de datos (fila 2 en adelante)."""
+    font_d = Font(name="Arial", size=9)
+    for row in ws.iter_rows(min_row=2):
+        # Filas pares (índice 0-based impar) → fondo alterno azul claro
+        usar_fill = (row[0].row % 2 == 1)  # fila 3, 5, 7… → True
+        for cell in row:
+            cell.font      = font_d
+            cell.border    = BORDE_CELDA
+            cell.fill      = FILL_ALTERNO if usar_fill else PatternFill()
+            horiz = "center" if cell.column in COLS_CENTRADAS else "left"
+            cell.alignment = Alignment(horizontal=horiz, vertical="top", wrap_text=True)
+
+
 def leer_estado_excel(ruta: Path) -> dict:
     """Devuelve dict {boletin: {nombre, fecha_ult, ult_mov, estado}} para comparación."""
     wb = load_workbook(ruta)
@@ -335,6 +361,7 @@ def actualizar_excel(ruta: Path) -> dict:
             row[COL_AUTORES - 1].alignment = a_wrap
         print(f"OK → {r['fecha']} | urgencia: {r.get('urgencia', '—')}")
 
+    estandarizar_formato(ws)
     wb.save(ruta)
     return resultados
 
