@@ -144,20 +144,26 @@ def obtener_datos_proy(boletin: str) -> dict:
                 vals = [td.get_text(strip=True) for td in tds]
                 if not vals:
                     continue
-                label = vals[0].rstrip(":").strip()
-                valor = vals[1] if len(vals) > 1 else ""
-                if label == "Título":
-                    resultado["nombre"] = valor
-                elif label == "Fecha de Ingreso":
-                    resultado["fecha_prs"] = valor
-                elif label == "Cámara de Origen":
-                    resultado["camara"] = valor
-                elif label == "Iniciativa":
-                    resultado["tipo"] = valor
-                elif label == "Urgencia Actual":
-                    resultado["urgencia"] = valor
-                elif label == "Etapa:" or label == "Etapa":
-                    # La subetapa (comisión) está en la siguiente fila
+                # La tabla tiene 4 columnas por fila (2 pares etiqueta-valor).
+                # Procesamos ambos pares: (vals[0], vals[1]) y (vals[2], vals[3]).
+                pares = [(vals[0], vals[1] if len(vals) > 1 else "")]
+                if len(vals) >= 4:
+                    pares.append((vals[2], vals[3]))
+                for label_raw, valor in pares:
+                    label = label_raw.rstrip(":").strip()
+                    if label == "Título":
+                        resultado["nombre"] = valor
+                    elif label == "Fecha de Ingreso":
+                        resultado["fecha_prs"] = valor
+                    elif label in ("Cámara de Origen", "Camara de Origen"):
+                        resultado["camara"] = valor
+                    elif label == "Iniciativa":
+                        resultado["tipo"] = valor
+                    elif label == "Urgencia Actual":
+                        resultado["urgencia"] = valor
+                # Etapa / subetapa sólo en el par izquierdo
+                label0 = vals[0].rstrip(":").strip()
+                if label0 in ("Etapa:", "Etapa"):
                     if i + 1 < len(rows):
                         next_tds = rows[i + 1].find_all("td")
                         if len(next_tds) > 1:
