@@ -1,18 +1,18 @@
 {
   "16.552-12": {
     "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "17/03/2026",
-    "ult_mov": "Primer trámite constitucional / Senado — Cuenta del Mensaje 2-374 que hace presente la urgencia Suma",
-    "urgencia": "—",
+    "fecha_ult": "08/04/2026",
+    "ult_mov": "Primer trámite constitucional / Senado — Discusión particular . Queda pendiente",
+    "urgencia": "Discusión inmediata",
     "ubicacion": "Senado",
     "comision": "En Sala",
-    "estado": "Primer trámite constitucional / Senado"
+    "estado": "Primer trámite constitucional / Senado — DiarioVotación"
   },
   "15.643-06": {
     "nombre": "Modifica normas legales que indica para obligar a las organizaciones no gubernamentales a transparentar sus ingresos y mecanismos de financiamiento",
-    "fecha_ult": "03/10/2023",
-    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta de proyecto . Pasa a Comisión de Gobierno, Descentralización y Regionalización",
-    "urgencia": "—",
+    "fecha_ult": "07/04/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 27-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
     "ubicacion": "Senado",
     "comision": "Gobierno, Descentralización y Regionalización",
     "estado": "Segundo trámite constitucional / Senado"
@@ -21,7 +21,7 @@
     "nombre": "Modifica la ley N° 20.500, sobre Asociaciones y Participación Ciudadana en la Gestión Pública, y otros cuerpos normativos que indica",
     "fecha_ult": "02/03/2026",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 1602-373 que hace presente la urgencia Suma",
-    "urgencia": "—",
+    "urgencia": "Suma",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
@@ -30,7 +30,7 @@
     "nombre": "Moderniza el régimen normativo de las corporaciones y fundaciones, y fortalece su fiscalización",
     "fecha_ult": "07/01/2026",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta, oficio N° 282-2025 de la Corte Suprema, por el cual remite opinión respecto del proyecto (informe N° 30-2025).",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
     "comision": "Constitución, Legislación, Justicia y Reglamento",
     "estado": "Primer trámite constitucional / C.Diputados"
@@ -39,7 +39,7 @@
     "nombre": "Proyecto de materia medioambiental (título no indexado en fuentes públicas)",
     "fecha_ult": "08/10/2025",
     "ult_mov": "Segundo trámite constitucional / Senado — Cuenta de proyecto . Pasa a Comisión de Derechos Humanos, Nacionalidad y Ciudadanía",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Senado",
     "comision": "Derechos Humanos, Nacionalidad y Ciudadanía",
     "estado": "Segundo trámite constitucional / Senado"
@@ -48,7 +48,7 @@
     "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
     "fecha_ult": "02/03/2026",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 1603-373 que hace presente la urgencia Simple",
-    "urgencia": "—",
+    "urgencia": "Simple",
     "ubicacion": "Cámara",
     "comision": "En Sala",
     "estado": "Primer trámite constitucional / C.Diputados"
@@ -57,7 +57,7 @@
     "nombre": "Establece y regula la debida diligencia de las empresas en el respeto a los derechos humanos, el medio ambiente y el cambio climático",
     "fecha_ult": "08/04/2025",
     "ult_mov": "Primer trámite constitucional / Senado — Cuenta de proyecto . Pasa a Comisión de Derechos Humanos, Nacionalidad y Ciudadanía",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Senado",
     "comision": "Derechos Humanos, Nacionalidad y Ciudadanía",
     "estado": "Primer trámite constitucional / Senado"
@@ -66,7 +66,7 @@
     "nombre": "Establece la obligación de incorporar la debida diligencia en derechos humanos a las empresas que operen en territorio nacional",
     "fecha_ult": "07/05/2025",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Oficio N° 20406. Deriva a la Comisión de Economía, Fomento; Micro, Pequeña y Mediana Empresa; Protección de los Consumidores y Turismo, el proyecto de ley asignado inicialmente a la Comisión de Derechos Humanos.",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
     "comision": "Derechos Humanos y Pueblos Originarios",
     "estado": "Primer trámite constitucional / C.Diputados — Oficio"
@@ -75,7 +75,7 @@
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
     "fecha_ult": "11/07/2023",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta de proyecto . Pasa a Comisión de Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
@@ -84,7 +84,7 @@
     "nombre": "Establece una regulación para la conformación y funcionamiento de organizaciones no gubernamentales",
     "fecha_ult": "05/07/2023",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta de proyecto . Pasa a Comisión de Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
@@ -93,7 +93,7 @@
     "nombre": "Modifica la ley N° 20.500, sobre asociaciones y participación ciudadana en la gestión pública, para establecer el deber de informar respecto del financiamiento y aportes recibidos de privados",
     "fecha_ult": "05/07/2023",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta de proyecto . Pasa a Comisión de Gobierno Interior, Nacionalidad, Ciudadanía y Regionalización.",
-    "urgencia": "—",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
