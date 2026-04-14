@@ -73,6 +73,13 @@ def ts():
     return int(time.time() * 1000)
 
 
+def _parse_fecha(fecha_str) -> datetime.datetime:
+    try:
+        return datetime.datetime.strptime(str(fecha_str or ""), "%d/%m/%Y")
+    except Exception:
+        return datetime.datetime.min
+
+
 def normalizar_boletin(val: str) -> str:
     val = val.strip().replace(".", "")
     if "-" not in val and len(val) > 2:
@@ -369,6 +376,16 @@ def actualizar_excel(ruta: Path) -> dict:
             row[COL_AUTORES - 1].alignment = a_wrap
         print(f"OK → {r['fecha']} | urgencia: {r.get('urgencia', '—')}")
 
+    # Ordenar filas por fecha de último movimiento (más reciente primero)
+    filas = []
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row):
+        if any(cell.value for cell in row):
+            filas.append([cell.value for cell in row])
+    filas.sort(key=lambda f: _parse_fecha(f[COL_FECHA_ULT - 1]), reverse=True)
+    for i, fila in enumerate(filas, start=2):
+        for j, valor in enumerate(fila, start=1):
+            ws.cell(row=i, column=j, value=valor)
+
     estandarizar_formato(ws)
     wb.save(ruta)
     return resultados
@@ -432,8 +449,10 @@ SEMANAS_RECIENTE = 4  # destacar proyectos con movimiento en las últimas N sema
 
 
 def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
-    solo_cambios   = [c for c in cambios if c["hubo_cambio"]]
-    sin_cambio     = [c for c in cambios if not c["hubo_cambio"]]
+    solo_cambios   = sorted([c for c in cambios if c["hubo_cambio"]],
+                            key=lambda c: _parse_fecha(c["fecha_ult"]), reverse=True)
+    sin_cambio     = sorted([c for c in cambios if not c["hubo_cambio"]],
+                            key=lambda c: _parse_fecha(c["fecha_ult"]), reverse=True)
 
     # Proyectos con movimiento reciente (últimas 2 semanas), excluyendo los que
     # ya aparecen en "cambios esta semana"
