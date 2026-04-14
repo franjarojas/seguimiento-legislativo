@@ -17,6 +17,15 @@
     "comision": "Gobierno, Descentralización y Regionalización",
     "estado": "Segundo trámite constitucional / Senado"
   },
+  "16746-06": {
+    "nombre": "Modifica la ley N° 20.285, sobre acceso a la informacion pública, para elevar los estándares de transparencia corporativa exigible a las empresas públicas",
+    "fecha_ult": "23/03/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 14-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
+    "estado": "Primer trámite constitucional / C.Diputados"
+  },
   "17.797-06": {
     "nombre": "Modifica la ley N° 20.500, sobre Asociaciones y Participación Ciudadana en la Gestión Pública, y otros cuerpos normativos que indica",
     "fecha_ult": "02/03/2026",
@@ -94,15 +103,6 @@
     "fecha_ult": "05/07/2023",
     "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta de proyecto . Pasa a Comisión de Gobierno Interior, Nacionalidad, Ciudadanía y Regionalización.",
     "urgencia": "Sin urgencia",
-    "ubicacion": "Cámara",
-    "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
-    "estado": "Primer trámite constitucional / C.Diputados"
-  },
-  "16746-06": {
-    "nombre": "Modifica la ley N° 20.285, sobre acceso a la informacion pública, para elevar los estándares de transparencia corporativa exigible a las empresas públicas",
-    "fecha_ult": "23/03/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 14-374 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
