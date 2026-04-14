@@ -317,7 +317,9 @@ def actualizar_excel(ruta: Path) -> dict:
         boletin = normalizar_boletin(val_raw)
         # Completar datos estáticos si el nombre está vacío o es genérico
         nombre_actual = str(row[COL_NOMBRE - 1].value or "").strip()
-        completar = not nombre_actual or nombre_actual in ("—", "Sin información disponible")
+        completar = (not nombre_actual or
+                     nombre_actual in ("—", "Sin información disponible") or
+                     "no indexado" in nombre_actual.lower())
         print(f"  {boletin}{'[completar]' if completar else ''}...", end=" ", flush=True)
         r = scraping_boletin(boletin, completar_estaticos=completar)
         resultados[val_raw] = r
