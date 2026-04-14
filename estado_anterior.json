@@ -26,6 +26,15 @@
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
     "estado": "Primer trámite constitucional / C.Diputados"
   },
+  "16.888-06": {
+    "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
+    "fecha_ult": "02/03/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 1603-373 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "En Sala",
+    "estado": "Primer trámite constitucional / C.Diputados"
+  },
   "17.817-07": {
     "nombre": "Moderniza el régimen normativo de las corporaciones y fundaciones, y fortalece su fiscalización",
     "fecha_ult": "07/01/2026",
@@ -44,14 +53,14 @@
     "comision": "Derechos Humanos, Nacionalidad y Ciudadanía",
     "estado": "Segundo trámite constitucional / Senado"
   },
-  "16.888-06": {
-    "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
-    "fecha_ult": "02/03/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 1603-373 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
+  "17.520-17": {
+    "nombre": "Establece la obligación de incorporar la debida diligencia en derechos humanos a las empresas que operen en territorio nacional",
+    "fecha_ult": "07/05/2025",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Oficio N° 20406. Deriva a la Comisión de Economía, Fomento; Micro, Pequeña y Mediana Empresa; Protección de los Consumidores y Turismo, el proyecto de ley asignado inicialmente a la Comisión de Derechos Humanos.",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
-    "comision": "En Sala",
-    "estado": "Primer trámite constitucional / C.Diputados"
+    "comision": "Derechos Humanos y Pueblos Originarios",
+    "estado": "Primer trámite constitucional / C.Diputados — Oficio"
   },
   "17.446-17": {
     "nombre": "Establece y regula la debida diligencia de las empresas en el respeto a los derechos humanos, el medio ambiente y el cambio climático",
@@ -61,15 +70,6 @@
     "ubicacion": "Senado",
     "comision": "Derechos Humanos, Nacionalidad y Ciudadanía",
     "estado": "Primer trámite constitucional / Senado"
-  },
-  "17.520-17": {
-    "nombre": "Establece la obligación de incorporar la debida diligencia en derechos humanos a las empresas que operen en territorio nacional",
-    "fecha_ult": "07/05/2025",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Oficio N° 20406. Deriva a la Comisión de Economía, Fomento; Micro, Pequeña y Mediana Empresa; Protección de los Consumidores y Turismo, el proyecto de ley asignado inicialmente a la Comisión de Derechos Humanos.",
-    "urgencia": "Sin urgencia",
-    "ubicacion": "Cámara",
-    "comision": "Derechos Humanos y Pueblos Originarios",
-    "estado": "Primer trámite constitucional / C.Diputados — Oficio"
   },
   "16.075-06": {
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
