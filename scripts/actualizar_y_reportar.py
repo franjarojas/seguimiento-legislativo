@@ -44,6 +44,7 @@ ESTADO_PATH     = ROOT / "estado_anterior.json"
 # ── Configuración ──────────────────────────────────────────────────────────
 SEMANAS_ALERTA  = 4   # marcar en el correo si un proyecto lleva N semanas sin cambios
 BASE_SENADO     = "https://tramitacion.senado.cl/appsenado/index.php"
+URL_BOLETIN     = "http://www.senado.cl/appsenado/templates/tramitacion/index.php?boletin_ini={}"
 HEADERS         = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
     "Referer": "https://tramitacion.senado.cl/appsenado/templates/tramitacion/index.php",
@@ -273,6 +274,19 @@ BORDE_CELDA    = Border(
 )
 
 
+def _aplicar_hyperlinks(ws) -> None:
+    font_link = Font(name="Arial", size=9, color="1155CC", underline="single")
+    a_ctr = Alignment(horizontal="center", vertical="top", wrap_text=True)
+    for row in ws.iter_rows(min_row=2):
+        cell = row[COL_BOLETIN - 1]
+        if not cell.value:
+            continue
+        boletin = str(cell.value).strip().replace(".", "")
+        cell.hyperlink = URL_BOLETIN.format(boletin)
+        cell.font = font_link
+        cell.alignment = a_ctr
+
+
 def estandarizar_formato(ws) -> None:
     """Aplica diseño uniforme a todas las celdas de datos (fila 2 en adelante)."""
     font_d = Font(name="Arial", size=9)
@@ -387,6 +401,7 @@ def actualizar_excel(ruta: Path) -> dict:
             ws.cell(row=i, column=j, value=valor)
 
     estandarizar_formato(ws)
+    _aplicar_hyperlinks(ws)
     wb.save(ruta)
     return resultados
 
@@ -468,12 +483,15 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
         and c["semanas_sin_cambio"] >= SEMANAS_ALERTA
     ]
 
+    def url_boletin(b):
+        return URL_BOLETIN.format(b.replace(".", ""))
+
     def fila_cambio(c):
         estado_ant = c["estado_anterior"] if c["estado_anterior"] != "—" else "<em>nuevo</em>"
         flecha = "🆕" if c["es_nuevo"] else "🔄"
         return f"""
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #e2e8f0;font-weight:600;white-space:nowrap">{flecha} {c['boletin']}</td>
+          <td style="padding:8px;border-bottom:1px solid #e2e8f0;font-weight:600;white-space:nowrap">{flecha} <a href="{url_boletin(c['boletin'])}" style="color:#1e3a5f">{c['boletin']}</a></td>
           <td style="padding:8px;border-bottom:1px solid #e2e8f0;font-size:13px">{c['nombre']}</td>
           <td style="padding:8px;border-bottom:1px solid #e2e8f0;white-space:nowrap;color:#64748b">{c['fecha_ult']}</td>
           <td style="padding:8px;border-bottom:1px solid #e2e8f0;font-size:13px;color:#dc2626">{estado_ant}</td>
@@ -483,7 +501,7 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
     def fila_reciente(c):
         return f"""
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #dcfce7;font-weight:600;white-space:nowrap">🟢 {c['boletin']}</td>
+          <td style="padding:8px;border-bottom:1px solid #dcfce7;font-weight:600;white-space:nowrap">🟢 <a href="{url_boletin(c['boletin'])}" style="color:#15803d">{c['boletin']}</a></td>
           <td style="padding:8px;border-bottom:1px solid #dcfce7;font-size:13px">{c['nombre']}</td>
           <td style="padding:8px;border-bottom:1px solid #dcfce7;white-space:nowrap">{c['fecha_ult']}</td>
           <td style="padding:8px;border-bottom:1px solid #dcfce7;font-size:13px">{c['ult_mov']}</td>
@@ -495,7 +513,7 @@ def construir_html(cambios: list[dict], fecha_ejecucion: str) -> str:
     def fila_alerta(c):
         return f"""
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #fef3c7;font-weight:600;white-space:nowrap">⚠️ {c['boletin']}</td>
+          <td style="padding:8px;border-bottom:1px solid #fef3c7;font-weight:600;white-space:nowrap">⚠️ <a href="{url_boletin(c['boletin'])}" style="color:#92400e">{c['boletin']}</a></td>
           <td style="padding:8px;border-bottom:1px solid #fef3c7;font-size:13px">{c['nombre']}</td>
           <td style="padding:8px;border-bottom:1px solid #fef3c7;white-space:nowrap">{c['fecha_ult']}</td>
           <td style="padding:8px;border-bottom:1px solid #fef3c7;color:#92400e">{c['semanas_sin_cambio']} semanas sin movimiento</td>
