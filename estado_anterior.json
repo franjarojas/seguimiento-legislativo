@@ -1,4 +1,13 @@
 {
+  "16.888-06": {
+    "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
+    "fecha_ult": "27/04/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Primer informe de comisión de Hacienda.",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Cuenta de primer informe de comisión",
+    "estado": "Primer trámite constitucional / C.Diputados"
+  },
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
     "fecha_ult": "24/04/2026",
@@ -42,15 +51,6 @@
     "urgencia": "Suma",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
-    "estado": "Primer trámite constitucional / C.Diputados"
-  },
-  "16.888-06": {
-    "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
-    "fecha_ult": "02/03/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 1603-373 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "En Sala",
     "estado": "Primer trámite constitucional / C.Diputados"
   },
   "17.817-07": {
