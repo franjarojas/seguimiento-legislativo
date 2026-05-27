@@ -1,12 +1,12 @@
 {
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "19/05/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del informe de la Comisión de Hacienda, del de la Comisión de Medio Ambiente, y del certificado de la Comisión de Trabajo",
+    "fecha_ult": "20/05/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Oficio de ley a Cámara Revisora .",
     "urgencia": "Suma",
     "ubicacion": "Cámara",
-    "comision": "Hacienda",
-    "estado": "Primer trámite constitucional / C.Diputados"
+    "comision": "Cuenta de proyecto",
+    "estado": "Primer trámite constitucional / C.Diputados — Oficio"
   },
   "16.888-06": {
     "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
@@ -16,6 +16,15 @@
     "ubicacion": "Cámara",
     "comision": "En Sala",
     "estado": "Primer trámite constitucional / C.Diputados — Diario"
+  },
+  "16553-12": {
+    "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
+    "fecha_ult": "11/05/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Segundo informe de comisión de Medio Ambiente, Cambio Climático y Bienes Nacionales.  COMPARADO DE INDICACIONES",
+    "urgencia": "Suma",
+    "ubicacion": "Senado",
+    "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
+    "estado": "Segundo trámite constitucional / Senado — Comparado"
   },
   "15.643-06": {
     "nombre": "Modifica normas legales que indica para obligar a las organizaciones no gubernamentales a transparentar sus ingresos y mecanismos de financiamiento",
