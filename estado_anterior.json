@@ -1,12 +1,39 @@
 {
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "20/05/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Oficio de ley a Cámara Revisora .",
+    "fecha_ult": "02/06/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 111-374 que hace presente la urgencia Suma",
     "urgencia": "Suma",
+    "ubicacion": "Senado",
+    "comision": "Hacienda",
+    "estado": "Segundo trámite constitucional / Senado"
+  },
+  "15.643-06": {
+    "nombre": "Modifica normas legales que indica para obligar a las organizaciones no gubernamentales a transparentar sus ingresos y mecanismos de financiamiento",
+    "fecha_ult": "02/06/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 123-374 que retira y hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Senado",
+    "comision": "Gobierno, Descentralización y Regionalización",
+    "estado": "Segundo trámite constitucional / Senado"
+  },
+  "16.552-12": {
+    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
+    "fecha_ult": "02/06/2026",
+    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 121-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
     "ubicacion": "Cámara",
-    "comision": "Cuenta de proyecto",
-    "estado": "Primer trámite constitucional / C.Diputados — Oficio"
+    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
+    "estado": "Segundo trámite constitucional / C.Diputados"
+  },
+  "17.817-07": {
+    "nombre": "Moderniza el régimen normativo de las corporaciones y fundaciones, y fortalece su fiscalización",
+    "fecha_ult": "02/06/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 122-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Constitución, Legislación, Justicia y Reglamento",
+    "estado": "Primer trámite constitucional / C.Diputados"
   },
   "16.888-06": {
     "nombre": "Moderniza la regulación del lobby y las gestiones de intereses particulares ante las autoridades y funcionarios",
@@ -26,24 +53,6 @@
     "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
     "estado": "Segundo trámite constitucional / Senado — Comparado"
   },
-  "15.643-06": {
-    "nombre": "Modifica normas legales que indica para obligar a las organizaciones no gubernamentales a transparentar sus ingresos y mecanismos de financiamiento",
-    "fecha_ult": "05/05/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 76-374 que retira y hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Senado",
-    "comision": "Gobierno, Descentralización y Regionalización",
-    "estado": "Segundo trámite constitucional / Senado"
-  },
-  "16.552-12": {
-    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "04/05/2026",
-    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 69-374 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
-    "estado": "Segundo trámite constitucional / C.Diputados"
-  },
   "16746-06": {
     "nombre": "Modifica la ley N° 20.285, sobre acceso a la informacion pública, para elevar los estándares de transparencia corporativa exigible a las empresas públicas",
     "fecha_ult": "23/03/2026",
@@ -60,15 +69,6 @@
     "urgencia": "Suma",
     "ubicacion": "Cámara",
     "comision": "Gobierno Interior Nacionalidad Ciudadanía y Regionalización",
-    "estado": "Primer trámite constitucional / C.Diputados"
-  },
-  "17.817-07": {
-    "nombre": "Moderniza el régimen normativo de las corporaciones y fundaciones, y fortalece su fiscalización",
-    "fecha_ult": "07/01/2026",
-    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta, oficio N° 282-2025 de la Corte Suprema, por el cual remite opinión respecto del proyecto (informe N° 30-2025).",
-    "urgencia": "Sin urgencia",
-    "ubicacion": "Cámara",
-    "comision": "Constitución, Legislación, Justicia y Reglamento",
     "estado": "Primer trámite constitucional / C.Diputados"
   },
   "16.886-12": {
