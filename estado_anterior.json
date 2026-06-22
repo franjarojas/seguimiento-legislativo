@@ -1,12 +1,12 @@
 {
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "10/06/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 143-374 que retira y hace presente la urgencia Suma",
+    "fecha_ult": "19/06/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Primer informe de comisión de Hacienda.",
     "urgencia": "Suma",
     "ubicacion": "Senado",
-    "comision": "Hacienda",
-    "estado": "Segundo trámite constitucional / Senado"
+    "comision": "Cuenta de primer informe de comisión",
+    "estado": "Segundo trámite constitucional / Senado — InformeComparado"
   },
   "16.075-06": {
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
