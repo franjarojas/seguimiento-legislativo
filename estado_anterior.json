@@ -1,12 +1,30 @@
 {
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "19/06/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Primer informe de comisión de Hacienda.",
+    "fecha_ult": "24/06/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Discusión general . Aprobado en general Se fija como plazo para presentar indicaciones el 06/07/2026 a las 12:00",
     "urgencia": "Suma",
     "ubicacion": "Senado",
-    "comision": "Cuenta de primer informe de comisión",
-    "estado": "Segundo trámite constitucional / Senado — InformeComparado"
+    "comision": "Boletín de indicaciones",
+    "estado": "Segundo trámite constitucional / Senado — DiarioVotación"
+  },
+  "16553-12": {
+    "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
+    "fecha_ult": "23/06/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 173-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Senado",
+    "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
+    "estado": "Segundo trámite constitucional / Senado"
+  },
+  "16.552-12": {
+    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
+    "fecha_ult": "22/06/2026",
+    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 163-374 que hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
+    "estado": "Segundo trámite constitucional / C.Diputados"
   },
   "16.075-06": {
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
@@ -44,15 +62,6 @@
     "comision": "Gobierno, Descentralización y Regionalización",
     "estado": "Segundo trámite constitucional / Senado"
   },
-  "16.552-12": {
-    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "02/06/2026",
-    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 121-374 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
-    "estado": "Segundo trámite constitucional / C.Diputados"
-  },
   "17.817-07": {
     "nombre": "Moderniza el régimen normativo de las corporaciones y fundaciones, y fortalece su fiscalización",
     "fecha_ult": "02/06/2026",
@@ -70,15 +79,6 @@
     "ubicacion": "Cámara",
     "comision": "En Sala",
     "estado": "Primer trámite constitucional / C.Diputados — Diario"
-  },
-  "16553-12": {
-    "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
-    "fecha_ult": "11/05/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Segundo informe de comisión de Medio Ambiente, Cambio Climático y Bienes Nacionales.  COMPARADO DE INDICACIONES",
-    "urgencia": "Suma",
-    "ubicacion": "Senado",
-    "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
-    "estado": "Segundo trámite constitucional / Senado — Comparado"
   },
   "16746-06": {
     "nombre": "Modifica la ley N° 20.285, sobre acceso a la informacion pública, para elevar los estándares de transparencia corporativa exigible a las empresas públicas",
