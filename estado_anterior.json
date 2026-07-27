@@ -1,30 +1,30 @@
 {
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "17/07/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Oficio modificaciones a Cámara de Origen .",
-    "urgencia": "Discusión inmediata",
+    "fecha_ult": "22/07/2026",
+    "ult_mov": "Disc. informe C.Mixta por rechazo de modif. C. Revisora / Senado — Discusión informe de Comisión Mixta . Queda pendiente Se solicita aplazamiento de la votación.",
+    "urgencia": "Sin urgencia",
     "ubicacion": "Senado",
-    "comision": "Cuenta oficio con modificaciones de Cámara Revisora",
-    "estado": "Segundo trámite constitucional / Senado — Oficio"
+    "comision": "En Sala",
+    "estado": "Disc. informe C.Mixta por rechazo de modif. C. Revisora / Senado — Diario"
+  },
+  "16.552-12": {
+    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
+    "fecha_ult": "22/07/2026",
+    "ult_mov": "Segundo trámite constitucional / C.Diputados — S.E. el Presidente de la República retira y formula indicaciones al proyecto. (114-374). Incluye informe financiero complementario N° 170/22.07.2026.",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
+    "estado": "Segundo trámite constitucional / C.Diputados — Oficio"
   },
   "16553-12": {
     "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
-    "fecha_ult": "23/06/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 173-374 que hace presente la urgencia Simple",
+    "fecha_ult": "21/07/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 215-374 que retira y hace presente la urgencia Simple",
     "urgencia": "Simple",
     "ubicacion": "Senado",
     "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
     "estado": "Segundo trámite constitucional / Senado"
-  },
-  "16.552-12": {
-    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "22/06/2026",
-    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 163-374 que hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
-    "estado": "Segundo trámite constitucional / C.Diputados"
   },
   "16.075-06": {
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
