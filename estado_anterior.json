@@ -1,4 +1,13 @@
 {
+  "18216-05": {
+    "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
+    "fecha_ult": "01/09/2026",
+    "ult_mov": "Trámite en Tribunal Constitucional / C.Diputados — Oficio N°2059/2026. Respuesta Ministerio de Hacienda",
+    "urgencia": "Discusión inmediata",
+    "ubicacion": "Cámara",
+    "comision": "Ingreso fallo del Tribunal Constitucional",
+    "estado": "Trámite en Tribunal Constitucional / C.Diputados — Oficio"
+  },
   "16553-12": {
     "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
     "fecha_ult": "18/08/2026",
@@ -7,15 +16,6 @@
     "ubicacion": "Senado",
     "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
     "estado": "Segundo trámite constitucional / Senado"
-  },
-  "18216-05": {
-    "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "17/08/2026",
-    "ult_mov": "Trámite finalización en Cámara de Origen / C.Diputados — Cuenta, Copia autorizada de una resolución del Tribunal Constitucional mediante la cual prorroga por diez días el plazo para resolver el requerimiento de inconstitucionalidad presentado respecto del proyecto.",
-    "urgencia": "Discusión inmediata",
-    "ubicacion": "Cámara",
-    "comision": "Ingreso fallo del Tribunal Constitucional",
-    "estado": "Trámite finalización en Cámara de Origen / C.Diputados"
   },
   "16.552-12": {
     "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
