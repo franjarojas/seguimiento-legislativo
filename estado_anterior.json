@@ -1,4 +1,22 @@
 {
+  "16553-12": {
+    "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
+    "fecha_ult": "08/09/2026",
+    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 311-374 que retira y hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Senado",
+    "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
+    "estado": "Segundo trámite constitucional / Senado"
+  },
+  "16.552-12": {
+    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
+    "fecha_ult": "07/09/2026",
+    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 302-374 que retira y hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
+    "estado": "Segundo trámite constitucional / C.Diputados"
+  },
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
     "fecha_ult": "01/09/2026",
@@ -7,24 +25,6 @@
     "ubicacion": "Cámara",
     "comision": "Ingreso fallo del Tribunal Constitucional",
     "estado": "Trámite en Tribunal Constitucional / C.Diputados — Oficio"
-  },
-  "16553-12": {
-    "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
-    "fecha_ult": "18/08/2026",
-    "ult_mov": "Segundo trámite constitucional / Senado — Cuenta del Mensaje 267-374 que retira y hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Senado",
-    "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
-    "estado": "Segundo trámite constitucional / Senado"
-  },
-  "16.552-12": {
-    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "17/08/2026",
-    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 262-374 que retira y hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
-    "estado": "Segundo trámite constitucional / C.Diputados"
   },
   "16.075-06": {
     "nombre": "Modifica cuerpos legales que indica en materia de transparencia e información de fondos recibidos por organizaciones de interés público",
