@@ -1,4 +1,13 @@
 {
+  "16.552-12": {
+    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
+    "fecha_ult": "09/09/2026",
+    "ult_mov": "Segundo trámite constitucional / C.Diputados — S.E. el Presidente de la República retira la urgencia \"simple\", hecha presente para el despacho de proyecto. (320-374).",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
+    "estado": "Segundo trámite constitucional / C.Diputados — Oficio"
+  },
   "16553-12": {
     "nombre": "Fortalece y mejora la eficacia de la fiscalización y el cumplimiento de la regulación ambiental a cargo de la Superintendencia del Medio Ambiente, y regula otras materias que indica",
     "fecha_ult": "08/09/2026",
@@ -8,19 +17,10 @@
     "comision": "Medio Ambiente, Cambio Climático y Bienes Nacionales",
     "estado": "Segundo trámite constitucional / Senado"
   },
-  "16.552-12": {
-    "nombre": "Modifica diversos cuerpos legales, con el objeto de fortalecer la institucionalidad ambiental y mejorar su eficiencia",
-    "fecha_ult": "07/09/2026",
-    "ult_mov": "Segundo trámite constitucional / C.Diputados — Cuenta del Mensaje 302-374 que retira y hace presente la urgencia Simple",
-    "urgencia": "Simple",
-    "ubicacion": "Cámara",
-    "comision": "Primer informe de comisión Medio Ambiente y Recursos Naturales",
-    "estado": "Segundo trámite constitucional / C.Diputados"
-  },
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
-    "fecha_ult": "01/09/2026",
-    "ult_mov": "Trámite en Tribunal Constitucional / C.Diputados — Oficio N°2059/2026. Respuesta Ministerio de Hacienda",
+    "fecha_ult": "07/09/2026",
+    "ult_mov": "Trámite en Tribunal Constitucional / C.Diputados — Cuenta, Oficio del Tribunal Constitucional por el cual remite copia autorizada de la sentencia definitiva recaída en el requerimiento de inconstitucionalidad presentado por S.E. el Presidente de la República, respecto del artículo 31 del proyecto. (343 -2026). BOLETÍN N° 18216-05. ROL N° 17892-26-CPT. RECHAZADO.",
     "urgencia": "Discusión inmediata",
     "ubicacion": "Cámara",
     "comision": "Ingreso fallo del Tribunal Constitucional",
