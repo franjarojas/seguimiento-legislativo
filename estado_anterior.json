@@ -1,11 +1,29 @@
 {
+  "18754-17": {
+    "nombre": "Reforma el Instituto Nacional de Derechos Humanos",
+    "fecha_ult": "19/10/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 389-374 que hace presente la urgencia Suma",
+    "urgencia": "Suma",
+    "ubicacion": "Cámara",
+    "comision": "Derechos Humanos y Pueblos Originarios",
+    "estado": "Primer trámite constitucional / C.Diputados"
+  },
+  "18271-07": {
+    "nombre": "Establece la obligación de declarar los aportes provenientes desde el extranjero para personas jurídicas sin fines de lucro",
+    "fecha_ult": "19/10/2026",
+    "ult_mov": "Primer trámite constitucional / C.Diputados — Cuenta del Mensaje 388-374 que retira y hace presente la urgencia Simple",
+    "urgencia": "Simple",
+    "ubicacion": "Cámara",
+    "comision": "Constitución, Legislación, Justicia y Reglamento",
+    "estado": "Primer trámite constitucional / C.Diputados"
+  },
   "18216-05": {
     "nombre": "Para la reconstrucción nacional y el desarrollo económico y social",
     "fecha_ult": "09/10/2026",
     "ult_mov": "Trámite finalización en Cámara de Origen / C.Diputados — Oficio de ley al Ejecutivo .",
     "urgencia": "Sin urgencia",
     "ubicacion": "Cámara",
-    "comision": "En espera de promulgación",
+    "comision": "Ley N° 21.850 (Diario Oficial del 17/10/2026)",
     "estado": "Trámite finalización en Cámara de Origen / C.Diputados — Oficio"
   },
   "16553-12": {
